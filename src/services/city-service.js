@@ -1,5 +1,5 @@
 const{CityRepository}=require('../repository/index');
-class Cityservice{
+class CityService{
     constructor(){
         this.CityRepository=new CityRepository();
 
@@ -45,4 +45,4 @@ class Cityservice{
         }
     }
 }
-module.exports=Cityservice;
+module.exports=CityService;
