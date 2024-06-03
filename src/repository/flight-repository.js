@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 
 class FlightRepository {
 
-    /**#createFilter(data) {
+    #createFilter(data) {
         let filter = {};
         if(data.arrivalAirportId) {
             filter.arrivalAirportId = data.arrivalAirportId;
@@ -33,7 +33,7 @@ class FlightRepository {
         // Object.assign(filter, {[Op.and]: [{ price: {[Op.lte]: 7000} }, { price: {[Op.gte]: 4000} }]})
         console.log(filter);
         return filter;
-    }*/
+    }
 
     async createFlight(data) {
         try {
@@ -57,7 +57,7 @@ class FlightRepository {
 
     async getAllFlights(filter) {
         try {
-           // const filterObject = this.#createFilter(filter);
+            const filterObject = this.#createFilter(filter);
             const flight = await Flights.findAll({
                 where: filterObject
             });
